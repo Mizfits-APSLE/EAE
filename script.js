@@ -58,4 +58,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize
     startAutoSlide();
+    // Expandable Passions Section Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const passionCards = document.querySelectorAll('.passion-card');
+    const detailBoxes = document.querySelectorAll('.passion-detail-box');
+
+    passionCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const targetId = card.getAttribute('data-target');
+            const targetBox = document.getElementById(targetId);
+            const isAlreadyActive = card.classList.contains('active');
+
+            // 1. Close all active cards and detail boxes
+            passionCards.forEach(c => {
+                c.classList.remove('active');
+                c.setAttribute('aria-expanded', 'false');
+            });
+            detailBoxes.forEach(box => {
+                box.classList.remove('open');
+            });
+
+            // 2. If the clicked card was NOT already open, expand it
+            if (!isAlreadyActive) {
+                card.classList.add('active');
+                card.setAttribute('aria-expanded', 'true');
+                targetBox.classList.add('open');
+
+                // Smooth scroll into view if on mobile
+                setTimeout(() => {
+                    targetBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 150);
+            }
+        });
+    });
+});
 });

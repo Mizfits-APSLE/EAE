@@ -188,29 +188,120 @@ h1, h2, h3 {
     transition: all 0.3s ease;
 }
 
-/* --- Passions Grid --- */
+/* --- Passions Grid & Buttons --- */
 .passions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .passion-card {
     background: var(--card-bg);
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    border: 2px solid transparent;
     border-top: 4px solid var(--secondary-color);
-    transition: transform 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
 }
 
 .passion-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    border-top-color: var(--secondary-color);
 }
 
 .passion-card h3 {
     color: var(--primary-color);
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.passion-card .expand-icon {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+/* Active Button State (When Open) */
+.passion-card.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-top-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(0, 95, 115, 0.25);
+}
+
+.passion-card.active h3,
+.passion-card.active .expand-icon {
+    color: #ffffff;
+}
+
+.passion-card.active .expand-icon {
+    transform: rotate(45deg); /* Turns + into x */
+}
+
+/* Connecting Arrow Pointer on Active Card */
+.passion-card.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--primary-color);
+    z-index: 5;
+}
+
+/* --- Expandable Details Box --- */
+.passion-details-container {
+    position: relative;
+}
+
+.passion-detail-box {
+    background: #ffffff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border-left: 5px solid var(--primary-color);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 1.75rem;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+    margin-top: 0;
+}
+
+.passion-detail-box.open {
+    max-height: 300px; /* Expands smoothly */
+    opacity: 1;
+    padding: 1.5rem 1.75rem;
+    margin-top: 0.75rem;
+}
+
+.passion-detail-box h4 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.passion-detail-box p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* --- Achievements List --- */
