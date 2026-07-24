@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. Carousel Functionality ---
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
@@ -7,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     let autoSlideInterval;
 
-    // Function to update slide visibility
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
@@ -28,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(newIndex);
     }
 
-    // Auto-advance slides every 5 seconds
     function startAutoSlide() {
         autoSlideInterval = setInterval(nextSlide, 5000);
     }
@@ -38,28 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     }
 
-    // Event Listeners
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetAutoSlide();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetAutoSlide();
-    });
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-            showSlide(i);
-            resetAutoSlide();
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => { showSlide(i); resetAutoSlide(); });
         });
-    });
+        startAutoSlide();
+    }
 
-    // Initialize
-    startAutoSlide();
-    // Expandable Passions Section Logic
-document.addEventListener('DOMContentLoaded', () => {
+    // --- 2. Expandable Passions Toggle ---
     const passionCards = document.querySelectorAll('.passion-card');
     const detailBoxes = document.querySelectorAll('.passion-detail-box');
 
@@ -69,27 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetBox = document.getElementById(targetId);
             const isAlreadyActive = card.classList.contains('active');
 
-            // 1. Close all active cards and detail boxes
-            passionCards.forEach(c => {
-                c.classList.remove('active');
-                c.setAttribute('aria-expanded', 'false');
-            });
-            detailBoxes.forEach(box => {
-                box.classList.remove('open');
-            });
+            // Close all open cards and detail boxes
+            passionCards.forEach(c => c.classList.remove('active'));
+            detailBoxes.forEach(box => box.classList.remove('open'));
 
-            // 2. If the clicked card was NOT already open, expand it
+            // If it wasn't already active, open the target detail box
             if (!isAlreadyActive) {
                 card.classList.add('active');
-                card.setAttribute('aria-expanded', 'true');
                 targetBox.classList.add('open');
-
-                // Smooth scroll into view if on mobile
-                setTimeout(() => {
-                    targetBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 150);
             }
         });
     });
-});
 });
