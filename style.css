@@ -1,9 +1,9 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #005f73;    /* Deep Ocean Teal */
-    --secondary-color: #0a9396;  /* Lagoon Blue */
-    --accent-color: #94d2bd;     /* Seafoam Green */
-    --bg-light: #f8f9fa;         /* Off-white */
+    --primary-color: #005f73;    
+    --secondary-color: #0a9396;  
+    --accent-color: #94d2bd;     
+    --bg-light: #f8f9fa;       
     --card-bg: #ffffff;
     --text-dark: #2b2d42;
     --text-muted: #5c677d;
@@ -35,7 +35,7 @@ h1, h2, h3, h4 {
     padding: 2rem 1.5rem;
 }
 
-/* --- Hero Banner --- */
+/* banners */
 .hero-banner {
     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), 
                 url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -57,7 +57,7 @@ h1, h2, h3, h4 {
     font-size: 1.2rem;
 }
 
-/* --- Section Layout --- */
+/* section layout */
 .section {
     margin-bottom: 3.5rem;
 }
@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
     box-shadow: var(--box-shadow);
 }
 
-/* --- Carousel --- */
+/* carousel */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -162,7 +162,7 @@ h1, h2, h3, h4 {
     border-radius: 5px;
 }
 
-/* --- Passions Buttons Grid --- */
+/* passions */
 .passions-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -204,7 +204,7 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* Active State for Clicked Button */
+/* when clicked */
 .passion-card.active {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -217,10 +217,10 @@ h1, h2, h3, h4 {
 
 .passion-card.active .expand-icon {
     color: #ffffff;
-    transform: rotate(45deg); /* Converts + to x */
+    transform: rotate(45deg); 
 }
 
-/* Arrow pointer under active button */
+/* arrow pointer */
 .passion-card.active::after {
     content: '';
     position: absolute;
@@ -234,13 +234,13 @@ h1, h2, h3, h4 {
     border-top: 10px solid var(--primary-color);
 }
 
-/* --- Expandable Details Cards --- */
+/* expandables */
 .passion-details-wrapper {
     margin-top: 1.25rem;
 }
 
 .passion-detail-box {
-    display: none; /* Strictly hidden by default */
+    display: none; /* hide defaultt */
     background: #ffffff;
     padding: 1.75rem;
     border-radius: var(--border-radius);
@@ -250,7 +250,7 @@ h1, h2, h3, h4 {
 }
 
 .passion-detail-box.open {
-    display: block; /* Visible when clicked */
+    display: block; /* visibility */
 }
 
 .passion-detail-box h3 {
@@ -269,7 +269,7 @@ h1, h2, h3, h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Achievements List --- */
+/* achievements */
 .achievements-list {
     list-style: none;
 }
@@ -282,7 +282,7 @@ h1, h2, h3, h4 {
     color: var(--primary-color);
 }
 
-/* --- Footer --- */
+/* footer */
 footer {
     text-align: center;
     padding: 1.75rem;
@@ -291,7 +291,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Mobile Responsive */
+/* Mobile */
 @media (max-width: 768px) {
     .passions-grid {
         grid-template-columns: repeat(2, 1fr);

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Carousel Functionality ---
+    // CAROUSEL
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     }
 
-    // --- 2. Expandable Passions Toggle ---
+    // EXPANDABLES
     const passionCards = document.querySelectorAll('.passion-card');
     const detailBoxes = document.querySelectorAll('.passion-detail-box');
 
@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetBox = document.getElementById(targetId);
             const isAlreadyActive = card.classList.contains('active');
 
-            // Close all open cards and detail boxes
+            // CLOSE
             passionCards.forEach(c => c.classList.remove('active'));
             detailBoxes.forEach(box => box.classList.remove('open'));
 
-            // If it wasn't already active, open the target detail box
+            // BACKUP
             if (!isAlreadyActive) {
                 card.classList.add('active');
                 targetBox.classList.add('open');
