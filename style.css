@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 /* banners */
 .hero-banner {
     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+                url('https://www.flickr.com/photos/202848367@N08/55420560704') center/cover no-repeat;
     height: 50vh;
     min-height: 300px;
     display: flex;
