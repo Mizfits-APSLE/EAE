@@ -1,4 +1,4 @@
-/* --- Global Styles & Variables --- */
+
 :root {
     --primary-color: #005f73;    
     --secondary-color: #0a9396;  
@@ -35,7 +35,7 @@ h1, h2, h3, h4 {
     padding: 2rem 1.5rem;
 }
 
-/* banners */
+
 .hero-banner {
     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), 
                 url('https://www.flickr.com/photos/202848367@N08/55420560704') center/cover no-repeat;
@@ -57,7 +57,7 @@ h1, h2, h3, h4 {
     font-size: 1.2rem;
 }
 
-/* section layout */
+
 .section {
     margin-bottom: 3.5rem;
 }
@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
     box-shadow: var(--box-shadow);
 }
 
-/* carousel */
+
 .carousel-container {
     position: relative;
     width: 100%;
@@ -162,7 +162,7 @@ h1, h2, h3, h4 {
     border-radius: 5px;
 }
 
-/* passions */
+
 .passions-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -204,7 +204,7 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* when clicked */
+
 .passion-card.active {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -220,7 +220,7 @@ h1, h2, h3, h4 {
     transform: rotate(45deg); 
 }
 
-/* arrow pointer */
+
 .passion-card.active::after {
     content: '';
     position: absolute;
@@ -234,13 +234,13 @@ h1, h2, h3, h4 {
     border-top: 10px solid var(--primary-color);
 }
 
-/* expandables */
+
 .passion-details-wrapper {
     margin-top: 1.25rem;
 }
 
 .passion-detail-box {
-    display: none; /* hide defaultt */
+    display: none; 
     background: #ffffff;
     padding: 1.75rem;
     border-radius: var(--border-radius);
@@ -250,7 +250,7 @@ h1, h2, h3, h4 {
 }
 
 .passion-detail-box.open {
-    display: block; /* visibility */
+    display: block; 
 }
 
 .passion-detail-box h3 {
@@ -269,7 +269,7 @@ h1, h2, h3, h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* achievements */
+
 .achievements-list {
     list-style: none;
 }
@@ -282,7 +282,7 @@ h1, h2, h3, h4 {
     color: var(--primary-color);
 }
 
-/* footer */
+
 footer {
     text-align: center;
     padding: 1.75rem;
@@ -291,7 +291,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Mobile */
+
 @media (max-width: 768px) {
     .passions-grid {
         grid-template-columns: repeat(2, 1fr);
